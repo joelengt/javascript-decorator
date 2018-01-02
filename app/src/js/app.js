@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Humans from './components/humans'
 import Fruits from './components/fruits'
+import Example from './components/example'
+
 
 const Topics = ({ match }) => (
   <div>
@@ -73,6 +75,9 @@ class Application extends React.Component {
               <Route path="/topics" component={Topics} />
             </Switch>
           </div>
+
+          <div>-------</div>
+          <Example/>
         </div>
       </Router>
     )
