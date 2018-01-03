@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Humans from './components/humans'
 import Fruits from './components/fruits'
 import Example from './components/example'
+import figlet from 'figlet'
+import $ from 'jquery'
 
 
 const Topics = ({ match }) => (
@@ -48,6 +50,23 @@ const Gist = ({ match }) => (
 )
 
 class Application extends React.Component {
+  
+  componentDidMount() {
+    $( window ).on( "load", function() {
+
+      figlet('Hello World!!', function(err, data) {
+          if (err) {
+              console.log('Something went wrong...');
+              console.dir(err);
+              return;
+          }
+          console.log(data)
+      });
+
+    })
+  
+  }
+
   render() {
     return (
       <Router>
