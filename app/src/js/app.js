@@ -63,6 +63,8 @@ class Application extends React.Component {
           console.log(data)
       });
 
+      console.log("%cExtra Large Yellow Text with Red Background", "background: red; color: yellow; font-size: x-large");
+
     })
   
   }
