@@ -7,7 +7,6 @@ import Example from './components/example'
 import figlet from 'figlet'
 import $ from 'jquery'
 
-
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
