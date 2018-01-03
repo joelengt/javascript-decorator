@@ -48,6 +48,38 @@ const Gist = ({ match }) => (
   </div>
 )
 
+class Math {
+  @log
+  add(a, b) {
+    return a + b;
+  }
+
+  remove(text) {
+    console.log('text', text)
+    return text
+  }
+}
+
+function log(target, name, descriptor) {
+  var oldValue = descriptor.value;
+
+  console.log('--------------------')
+
+  console.log('target', target)
+  console.log('name', name)
+  console.log('descriptor', descriptor)
+
+  console.log('--------------------')
+
+  descriptor.value = function() {
+    console.log(`Calling "${name}" with`, arguments);
+
+    return oldValue.apply(null, arguments);
+  };
+
+  return descriptor;
+}
+
 class Application extends React.Component {
   
   componentDidMount() {
@@ -65,6 +97,11 @@ class Application extends React.Component {
       console.log("%cExtra Large Yellow Text with Red Background", "background: red; color: yellow; font-size: x-large");
 
     })
+
+    const math = new Math();
+
+    // passed parameters should get logged now
+    math.add(2, 4);
   
   }
 
